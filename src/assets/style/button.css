@@ -1,0 +1,19 @@
+button {
+  box-shadow: 0px 0px 0px 0px white;
+  border: 0px solid white;
+  padding: 15px 25px;
+  font-size: var(--font-bg);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+button.primary:active {
+  color: rgba(255, 255, 255, 0.5);
+}

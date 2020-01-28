@@ -1,0 +1,23 @@
+input {
+  box-shadow: 0px 0px 0px 0px white;
+  border: 0px solid white;
+  border-bottom: 2px solid var(--color-primary-gray-semi-light);
+  font-size: 16px;
+  padding: 16px;
+  color: var(--color-off-black);
+  background: var(--color-off-white);
+  caret-color: var(--color-primary);
+}
+
+input::placeholder {
+  color: var(--color-gray-semi-dark);
+}
+
+input:focus {
+  border-bottom: 2px solid var(--color-primary);
+  outline: none;
+}
+
+input.error {
+  border-bottom: 2px solid var(--color-red);
+}

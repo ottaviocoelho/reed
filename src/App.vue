@@ -1,32 +1,80 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <main>
+    <img src="@/assets/images/submarine.svg">
     <router-view/>
-  </div>
+    <section class="user-control-wrapper">
+      <user-control/>
+    </section>
+  </main>
 </template>
 
+<script>
+import UserControl from './components/UserControl'
+
+export default {
+  name: 'App',
+  components: {
+    UserControl
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+.user-control-wrapper {
+  position: absolute;
+  width: 30%;
+  max-width: 400px;
+  top: 150px;
+  right: 150px;
 }
 
-#nav {
-  padding: 30px;
+main {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 5
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+main > img {
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  width: 250px;
+  opacity: 0.2;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+main > *:not(img) {
+  z-index: 5;
+}
+
+@media (max-width: 1560px) {
+
+  .user-control-wrapper {
+    top: 0;
+    right: 10%;
+    width: 80%;
+    max-width: 100%;
+  }
+
+  main {
+    padding-top: 150px;
+  }
+
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 </style>

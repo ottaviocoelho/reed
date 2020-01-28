@@ -1,0 +1,14 @@
+.shadow {
+  box-shadow: 10px 10px 25px -10px var(--color-gray-semi-light);
+}
+
+p.right {
+  text-align: right;
+}
+
+p::selection,
+span::selection {
+  background: var(--color-primary-semi-light);
+  text-shadow: 2px 2px var(--color-primary-semi-dark);
+  color: white;
+}
