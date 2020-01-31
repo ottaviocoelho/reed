@@ -5,7 +5,9 @@
     </h1>
     <header>
     </header>
-    <input type="text" placeholder="Pesquise posts, tags, times..." value="">
+    <div class="input-wrapper">
+      <input type="text" placeholder="Pesquise posts, tags, times..." value="">
+    </div>
     <div class="content">
       <user :right="true"
       :user="user"/>
@@ -13,7 +15,7 @@
         :tags="tags"
         title="Minhas Tags"
       />
-      <button type="button" class="primary">NOVO POST</button>
+      <button type="button" class="primary" @click="() => $router.push('/new-post')">NOVO POST</button>
     </div>
   </section>
 </template>
@@ -51,7 +53,7 @@ export default {
   width: 100%;
   max-width: 450px;
   position: relative;
-  box-shadow: 0px 1px 0px 1px var(--color-gray-light);
+  background: white;
 }
 
 .user-control h1 {
@@ -82,15 +84,22 @@ export default {
   background: linear-gradient(to right, var(--color-primary-semi-light), var(--color-primary-semi-dark));
 }
 
-.user-control input {
-  margin: 15px 10%;
-  width: 80%;
+.user-control .input-wrapper {
+  padding: 15px 10%;
+  border-left: 1px solid var(--color-gray-light);
+  border-right: 1px solid var(--color-gray-light);
+}
+
+.user-control .input-wrapper input {
+  width: 100%;
 }
 
 .user-control .content {
   width: 100%;
   padding: 5px;
   position: relative;
+  border: 1px solid var(--color-gray-light);
+  border-top: 0px solid white;
 }
 
 .user-control .content > button {
@@ -116,9 +125,15 @@ export default {
     height: fit-content;
   }
 
-  .user-control > input {
+  .user-control .input-wrapper {
     margin: 15px 0px;
     max-width: 60%;
+    border: 0px solid white;
+  }
+
+  .user-control > input {
+    margin: 15px 0px;
+    max-width: 100%;
   }
 
   .user-control .content {
@@ -126,6 +141,7 @@ export default {
     right: 0;
     top: 10px;
     width: 35%;
+    border: 0px solid white;
   }
 
   .user-control .content > button {

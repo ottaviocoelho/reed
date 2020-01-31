@@ -41,8 +41,8 @@ main {
 main > img {
   z-index: 1;
   position: absolute;
-  top: 15px;
-  left: 50px;
+  bottom: 15px;
+  right: 50px;
   width: 250px;
   opacity: 0.2;
 }

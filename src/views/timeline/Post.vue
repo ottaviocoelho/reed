@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="post">
+  <div class="post" @click="() => $router.push(`/${id}`)">
     <p class="title">{{title}}</p>
     <p class="subtitle">{{description}}</p>
     <div class="tags-wrapper">
@@ -18,12 +18,13 @@ import User from '@/components/User'
 import Tags from '@/components/Tags'
 
 export default {
-  name: 'Post',
+  name: 'PostWrapper',
   components: {
     User,
     'user-tags': Tags
   },
   props: [
+    'id',
     'title',
     'tags',
     'description',

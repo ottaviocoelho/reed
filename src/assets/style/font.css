@@ -10,10 +10,8 @@
   --font-sm: 12px;
 
   --font-color-primary: #3B495E;
-
-}
-
-:root {
+  
   font-size: var(--font-md);
   font-family: var(--font-family-primary);
+
 }

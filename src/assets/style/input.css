@@ -9,6 +9,11 @@ input {
   caret-color: var(--color-primary);
 }
 
+input.secondary {
+  padding: 8px;
+  font-size: 14px;
+}
+
 input::placeholder {
   color: var(--color-gray-semi-dark);
 }
